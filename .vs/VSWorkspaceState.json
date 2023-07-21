@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Business",
+    "\\Business\\Services",
+    "\\Business\\Services\\Concrete",
+    "\\Business\\Services\\Concrete\\Admin"
+  ],
+  "SelectedNode": "\\Business\\Services\\Concrete\\Admin\\SliderService.cs",
+  "PreviewInSolutionExplorer": false
+}
