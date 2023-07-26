@@ -3,9 +3,11 @@
     "",
     "\\Business",
     "\\Business\\Services",
+    "\\Business\\Services\\Abstract",
+    "\\Business\\Services\\Abstract\\Admin",
     "\\Business\\Services\\Concrete",
     "\\Business\\Services\\Concrete\\Admin"
   ],
-  "SelectedNode": "\\Business\\Services\\Concrete\\Admin\\SliderService.cs",
+  "SelectedNode": "\\Business\\Services\\Concrete\\Admin\\WhatWeDoService.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -15,7 +15,14 @@ namespace DataAccess.Contexts
         {
             
         }
-        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Slider> Sliders { get; set;}
+        public DbSet<OurVision> OurVisions { get; set;}
+        public DbSet<OurVisionGoal> OurVisionGoal { get; set;}
+        public DbSet<AboutUsImages> AboutUsImages { get; set;}
+        public DbSet<AboutUsViewComponent> AboutUsViewComponent { get; set;}
+        public DbSet<WhatWeDo> WhatWeDo { get; set;}
+        public DbSet<WhatWeDoComponent> WhatWeDoComponent { get;set;}
+
 
     }
 }

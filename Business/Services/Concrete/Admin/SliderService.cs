@@ -5,6 +5,7 @@ using Common.Entities;
 using DataAccess.Repositories.Abstract;
 using DataAccess.Repositories.Concrete;
 using DataAccess.UnitOfWork;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -40,6 +41,18 @@ namespace Business.Services.Concrete.Admin
 		{
 			if (!_modelstate.IsValid) return false;
 
+			if (!_fileService.IsImage(model.PhotoFile))
+			{
+				_modelstate.AddModelError("Photo", "Wrong file format");
+				return false;
+			}
+
+			if (_fileService.IsBiggerThanSize(model.PhotoFile, 200))
+			{
+				_modelstate.AddModelError("Photo", "File size is over 200kb");
+				return false;
+			}
+
 			var Slider = new Slider
 			{
 				Title = model.Title,
@@ -48,7 +61,6 @@ namespace Business.Services.Concrete.Admin
 				BtnText = model.BtnText,
 				PhotoName = _fileService.Upload(model.PhotoFile),
 				CreatedAt = DateTime.Now,
-				ModfiedAt = DateTime.Now
 			};
 
 
@@ -59,7 +71,7 @@ namespace Business.Services.Concrete.Admin
 			return true;
 		}
 
-		public async Task<bool> DeleteAsync(int id)
+		public async Task<bool> DeleteAsync(SliderUpdateVM model, int id)
 		{
 			var slider = await _sliderRepository.GetByIdAsync(id);
 			if (slider is null)
@@ -111,7 +123,19 @@ namespace Business.Services.Concrete.Admin
 
 			if(model.PhotoFile != null)
 			{
+				if (!_fileService.IsImage(model.PhotoFile))
+				{
+					_modelstate.AddModelError("NewPhoto", "Wrong file format");
+					return false;
+				}
 
+				if (_fileService.IsBiggerThanSize(model.PhotoFile, 200))
+				{
+					_modelstate.AddModelError("NewPhoto", "File size is over 200kb");
+					return false;
+				}
+
+				_fileService.Delete(slider.PhotoName);
 				slider.PhotoName = _fileService.Upload(model.PhotoFile);
 			}
 			_sliderRepository.Update(slider);
