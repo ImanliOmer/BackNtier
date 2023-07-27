@@ -7509,12 +7509,28 @@
       "PackagePath": "staticwebassets\\assets\\font-awesome\\webfonts\\fa-solid-900.woff2"
     },
     {
+      "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\49a241e2-fca0-4247-9534-da8c5ab16eb7_shop-category-img-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\49a241e2-fca0-4247-9534-da8c5ab16eb7_shop-category-img-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\807a969c-1006-47ff-8509-e9e7a8a83540_shop-category-img-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\807a969c-1006-47ff-8509-e9e7a8a83540_shop-category-img-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\9d07f728-9a31-48ed-bca3-4419be07e9ab_contact.png",
+      "PackagePath": "staticwebassets\\assets\\images\\9d07f728-9a31-48ed-bca3-4419be07e9ab_contact.png"
+    },
+    {
       "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\about-1.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\about-1.jpg"
     },
     {
       "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\about-2.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\about-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\af3a92a8-775e-4dba-ab81-cb2ba5611611_contact.png",
+      "PackagePath": "staticwebassets\\assets\\images\\af3a92a8-775e-4dba-ab81-cb2ba5611611_contact.png"
     },
     {
       "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\appointment-2.jpg",
@@ -7679,6 +7695,10 @@
     {
       "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\down-arrow.svg",
       "PackagePath": "staticwebassets\\assets\\images\\down-arrow.svg"
+    },
+    {
+      "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\e28b4ba8-0bb9-48af-b1f2-7808123743bb_contact.png",
+      "PackagePath": "staticwebassets\\assets\\images\\e28b4ba8-0bb9-48af-b1f2-7808123743bb_contact.png"
     },
     {
       "Id": "C:\\Users\\asus\\Desktop\\BackendFinal\\Presentation\\wwwroot\\assets\\images\\expand-arrow.svg",

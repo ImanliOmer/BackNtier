@@ -3,11 +3,15 @@
     "",
     "\\Business",
     "\\Business\\Services",
-    "\\Business\\Services\\Abstract",
-    "\\Business\\Services\\Abstract\\Admin",
     "\\Business\\Services\\Concrete",
-    "\\Business\\Services\\Concrete\\Admin"
+    "\\Business\\Services\\Concrete\\Admin",
+    "\\Presentation",
+    "\\Presentation\\Areas",
+    "\\Presentation\\Areas\\Admin",
+    "\\Presentation\\Areas\\Admin\\Views",
+    "\\Presentation\\Areas\\Admin\\Views\\OurVisionGoal",
+    "\\Presentation\\Areas\\Admin\\Views\\Slider"
   ],
-  "SelectedNode": "\\Business\\Services\\Concrete\\Admin\\WhatWeDoService.cs",
+  "SelectedNode": "\\Presentation\\Areas\\Admin\\Views\\OurVisionGoal\\Update.cshtml",
   "PreviewInSolutionExplorer": false
 }

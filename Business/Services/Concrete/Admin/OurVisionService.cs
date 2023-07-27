@@ -1,6 +1,7 @@
 ﻿using Business.Services.Abstract.Admin;
 using Business.Utilities.File;
 using Business.ViewModels.Admin.OurVision;
+using Business.ViewModels.Admin.OurVisionGoal;
 using Business.ViewModels.Admin.Slider;
 using DataAccess.Repositories.Abstract;
 using DataAccess.Repositories.Concrete;
@@ -32,6 +33,16 @@ namespace Business.Services.Concrete.Admin
 			_contextAccsser = contextAccsser;
 			_fileService = fileService;
 			_unitOfWork = unitOfWork;
+		}
+
+		public async Task<OurVisionIndexVM> GetAllAsync()
+		{
+			var model = new OurVisionIndexVM
+			{
+				Vision = await _ourVisionRepository.GetAllAsync()
+			};
+
+			return model;
 		}
 
 		public async Task<OurVisionUpdateVM> UpdateAsync(int id)

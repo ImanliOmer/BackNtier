@@ -11,5 +11,6 @@ namespace DataAccess.Repositories.Abstract
 	public interface IOurVisionGoalRepository : IRepository<OurVisionGoal>
 	{
 		void SofDeleteAsync(OurVisionGoal ourVisionGoal);
+		Task< List<OurVisionGoal>> GetAll();
 	}
 }

@@ -17,10 +17,9 @@ using System.Threading.Tasks;
 
 namespace Business.Services.Concrete.Admin
 {
-    public class SliderService : ISliderService
+    public class SliderService : ISliderService	
     {
 		private readonly ISliderRepository _sliderRepository;
-		private readonly IActionContextAccessor _contextAccsser;
 		private readonly IFileService _fileService;
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly ModelStateDictionary _modelstate;
@@ -29,9 +28,8 @@ namespace Business.Services.Concrete.Admin
 							IFileService fileService,
 							IUnitOfWork unitOfWork)
         {
-			_modelstate = _contextAccsser.ActionContext.ModelState;
+			_modelstate = contextAccsser.ActionContext.ModelState;
 			_sliderRepository = sliderRepository;
-			_contextAccsser = contextAccsser;
 			_fileService = fileService;
 			_unitOfWork = unitOfWork;
 		}
@@ -71,7 +69,7 @@ namespace Business.Services.Concrete.Admin
 			return true;
 		}
 
-		public async Task<bool> DeleteAsync(SliderUpdateVM model, int id)
+		public async Task<bool> DeleteAsync( int id)
 		{
 			var slider = await _sliderRepository.GetByIdAsync(id);
 			if (slider is null)
@@ -85,6 +83,18 @@ namespace Business.Services.Concrete.Admin
 			await _unitOfWork.CommitAsync();
 
 			return true;
+		}
+
+		public async Task<SliderIndexItemVM> GelAllASync()
+		{
+			var slider = (await _sliderRepository.GetAllAsync()).FirstOrDefault();
+			if (slider is null) return null;
+			
+			return new SliderIndexItemVM
+			{ 
+				Title = slider.Title,
+				Photo = slider.PhotoName,
+			};
 		}
 
 		public async Task<SliderUpdateVM> UpdateAsync(int id)
@@ -143,5 +153,10 @@ namespace Business.Services.Concrete.Admin
 			return true;
 		}
 
+
+		
+
+
 	}
+
 }

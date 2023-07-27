@@ -11,7 +11,9 @@ namespace Business.Services.Abstract.Admin
     {
         Task<bool> CreateAsync(SliderCreateVM model);
 		Task<bool> UpdateAsync(SliderUpdateVM model,int id);
-		Task<bool> DeleteAsync(SliderUpdateVM model,int id);
-
+		Task<SliderIndexItemVM> GelAllASync();
+		Task<SliderUpdateVM> UpdateAsync(int id);
+		Task<bool> DeleteAsync(int id);
+		
 	}
 }

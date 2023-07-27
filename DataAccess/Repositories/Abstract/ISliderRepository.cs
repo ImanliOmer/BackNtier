@@ -12,5 +12,6 @@ namespace DataAccess.Repositories.Abstract
 	public interface ISliderRepository: IRepository<Slider> 
 	{
 		 void SofDeleteAsync(Slider slider);
+
 	}
 }

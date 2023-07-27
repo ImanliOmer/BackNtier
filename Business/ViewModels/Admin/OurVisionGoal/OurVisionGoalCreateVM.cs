@@ -16,7 +16,7 @@ namespace Business.ViewModels.Admin.OurVisionGoal
 		[Required]
 		public string Desc { get; set; }
 
-		[Required]
+        [Required]
 		public IFormFile PhotoFile { get; set; }
 	}
 }

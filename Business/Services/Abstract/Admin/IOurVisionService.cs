@@ -10,7 +10,9 @@ namespace Business.Services.Abstract.Admin
 {
 	public interface IOurVisionService
 	{
+		Task<OurVisionIndexVM> GetAllAsync();
 		Task<bool> UpdateAsync(OurVisionUpdateVM model, int id);
+		Task<OurVisionUpdateVM> UpdateAsync(int id);
 
 	}
 }

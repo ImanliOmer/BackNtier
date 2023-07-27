@@ -18,6 +18,5 @@ namespace Common.Entities
 		public string PhotoName { get; set; }
 
         public bool IsDeleted { get; set; }
-
-    }
+	}
 }

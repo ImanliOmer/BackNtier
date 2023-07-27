@@ -26,5 +26,10 @@ namespace DataAccess.Repositories.Concrete
 			_context.Update(ourVisionGoal);
 		}
 
+		public async Task<List<OurVisionGoal>> GetAll()
+		{
+			return await _context.OurVisionGoal.Where(x => !x.IsDeleted).ToListAsync();
+		}
+
 	} 
 }

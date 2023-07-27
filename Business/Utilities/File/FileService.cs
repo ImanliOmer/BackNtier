@@ -23,7 +23,7 @@ namespace Business.Utilities.File
 
 		public void Delete(string photoName)
 		{
-			var filePath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/img", photoName);
+			var filePath = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", photoName);
 
 			if (System.IO.File.Exists(filePath))
 				System.IO.File.Delete(filePath);
@@ -38,8 +38,8 @@ namespace Business.Utilities.File
 
 		public string Upload(IFormFile file)
 		{
-			var fileName = Guid.NewGuid() + " " + file.FileName;
-			var path = Path.Combine(_webHostEnvironment.WebRootPath, "assets/img", fileName);
+			var fileName = Guid.NewGuid() + "_" + file.FileName;
+			var path = Path.Combine(_webHostEnvironment.WebRootPath, "assets/images", fileName);
 
 			using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite))
 				file.CopyTo(fileStream);

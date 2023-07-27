@@ -20,7 +20,6 @@ namespace Business.Services.Concrete.Admin
 	public class OurVisionGoalService : IOurVisionGoalService
 	{
 		private readonly IOurVisionGoalRepository _ourVisionGoalRepository;
-		private readonly IActionContextAccessor _contextAccsser;
 		private readonly IFileService _fileService;
 		private readonly IUnitOfWork _unitOfWork;
 		private readonly ModelStateDictionary _modelstate;
@@ -29,14 +28,11 @@ namespace Business.Services.Concrete.Admin
 							IFileService fileService,
 							IUnitOfWork unitOfWork)
 		{
-			_modelstate = _contextAccsser.ActionContext.ModelState;
+			_modelstate = contextAccsser.ActionContext.ModelState;
 			_ourVisionGoalRepository = ourVisionGoalRepository;
-			_contextAccsser = contextAccsser;
 			_fileService = fileService;
 			_unitOfWork = unitOfWork;
 		}
-
-
 
 		public async Task<bool> CreateAsync(OurVisionGoalCreateVM model)
 		{
@@ -46,7 +42,6 @@ namespace Business.Services.Concrete.Admin
 				_modelstate.AddModelError("Photo", "Wrong file format");
 				return false;
 			}
-
 			if (_fileService.IsBiggerThanSize(model.PhotoFile, 200))
 			{
 				_modelstate.AddModelError("Photo", "File size is over 200kb");
@@ -61,17 +56,13 @@ namespace Business.Services.Concrete.Admin
 				
 			};
 
-
 			await _ourVisionGoalRepository.CreateAsync(OurVisionGoal);
 			await _unitOfWork.CommitAsync();
-
 
 			return true;
 
 		}
-
-	
-		public async Task<bool> DeleteAsync(OurVisionGoalUpdatedVM model, int id)
+		public async Task<bool> DeleteAsync(int id)
 		{
 			var ourVisionGoal = await _ourVisionGoalRepository.GetByIdAsync(id);
 			if (ourVisionGoal is null)
@@ -86,8 +77,6 @@ namespace Business.Services.Concrete.Admin
 			return true;
 		}
 
-
-	
 
 		public async Task<OurVisionGoalUpdatedVM> UpdateAsync(int id)
 		{
@@ -138,6 +127,16 @@ namespace Business.Services.Concrete.Admin
 			_ourVisionGoalRepository.Update(ourVisionGoal);
 			await _unitOfWork.CommitAsync();
 			return true;
+		}
+
+		public async Task<OurVisionGoalIndexVM> GetAllAsync()
+		{
+			var model = new OurVisionGoalIndexVM
+			{
+				VisionGoals = await _ourVisionGoalRepository.GetAll()
+			};
+
+			return model;
 		}
 	}
 }
