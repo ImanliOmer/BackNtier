@@ -2,16 +2,17 @@
   "ExpandedNodes": [
     "",
     "\\Business",
-    "\\Business\\Services",
-    "\\Business\\Services\\Concrete",
-    "\\Business\\Services\\Concrete\\Admin",
+    "\\Business\\Utilities",
+    "\\Business\\ViewModels",
+    "\\Common",
+    "\\Common\\Entities",
+    "\\Common\\Entities\\Base",
     "\\Presentation",
     "\\Presentation\\Areas",
     "\\Presentation\\Areas\\Admin",
     "\\Presentation\\Areas\\Admin\\Views",
-    "\\Presentation\\Areas\\Admin\\Views\\OurVisionGoal",
     "\\Presentation\\Areas\\Admin\\Views\\Slider"
   ],
-  "SelectedNode": "\\Presentation\\Areas\\Admin\\Views\\OurVisionGoal\\Update.cshtml",
+  "SelectedNode": "\\Business\\Services\\Concrete\\Admin\\SliderService.cs",
   "PreviewInSolutionExplorer": false
 }
